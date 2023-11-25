@@ -29,12 +29,12 @@ const SignUp = () => {
     }
 
     return (
-        <div>
+        <div className="bg-teal-50 py-20">
 
             {/* sign Up form */}
             <div className="flex justify-center items-center h-screen">
-                <Card color="transparent" shadow={false} className="bg-blue-gray-900 text-white px-10 py-8">
-                    <Typography variant="h4" className="text-white">
+                <Card color="transparent" shadow={false} className="bg-amber-100 text-blue-gray-900 px-10 py-8 border-b-[3px] border-b-amber-800">
+                    <Typography variant="h4" className="">
                         Sign Up
                     </Typography>
                     <Typography color="gray" className="mt-1 font-normal">
@@ -43,7 +43,7 @@ const SignUp = () => {
                     <form onSubmit={handleSubmit(onSubmit)} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                         <div className="mb-1 flex flex-col gap-6">
                             {/* name field */}
-                            <Typography variant="h6" color="white" className="-mb-3">
+                            <Typography variant="h6" className="-mb-3">
                                 Your Name
                             </Typography>
                             <Input  {...register("name")} name="name"
@@ -56,7 +56,7 @@ const SignUp = () => {
                             />
 
                             {/* photo upload field */}
-                            <Typography variant="h6" color="white" className="-mb-3">
+                            <Typography variant="h6" className="-mb-3">
                                 Your Photo
                             </Typography>
                             <Input  {...register("photo")} type="url" name="photo"
@@ -69,7 +69,7 @@ const SignUp = () => {
                             />
 
                             {/* email field */}
-                            <Typography variant="h6" color="white" className="-mb-3">
+                            <Typography variant="h6" className="-mb-3">
                                 Your Email
                             </Typography>
                             <Input  {...register("email")} name="email"
@@ -80,7 +80,7 @@ const SignUp = () => {
                                     className: "before:content-none after:content-none",
                                 }}
                             />
-                            <Typography variant="h6" color="white" className="-mb-3">
+                            <Typography variant="h6" className="-mb-3">
                                 Password
                             </Typography>
                             <Input  {...register("password")} name="password"
@@ -115,12 +115,12 @@ const SignUp = () => {
                         {/* <Input
                             type="submit" value="Sign In" 
                         /> */}
-                        <input type="submit" value="Sign In" className="font-medium bg-black w-full py-2 rounded-lg cursor-pointer block text-center text-white mt-4" />
+                        <input type="submit" value="Sign In" className="font-medium bg-amber-800 w-full py-2 rounded-lg cursor-pointer block text-center text-white mt-4" />
 
                         <Typography color="gray" className="mt-4 text-center font-normal">
                             Already have an account?{" "}
 
-                            <a href="/login" className="font-medium text-gray-300">
+                            <a href="/login" className="text-blue-700 font-semibold hover:underline">
                                 Sign In
                             </a>
                         </Typography>

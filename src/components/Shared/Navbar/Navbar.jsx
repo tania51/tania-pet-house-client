@@ -10,7 +10,6 @@ import {
 } from "@material-tailwind/react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import userImg from "../../../assets/user.png"
 import {
   Menu,
   MenuHandler,
@@ -29,7 +28,6 @@ function StickyNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
   // const [mood, setMood] = useState(true);
   const { user, logOut } = useAuth();
-  console.log(user);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -115,12 +113,6 @@ function StickyNavbar() {
               :
               <>
                 <span className="ml-8">
-                  <Avatar
-                    size="sm"
-                    alt="avatar"
-                    src={userImg}
-                    className="border shadow-sm border-gray-700 shadow-green-900/20 mx-2 bg-white"
-                  />
                 </span>
                 <Link to="/login">
                   <Button

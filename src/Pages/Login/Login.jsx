@@ -26,12 +26,12 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="bg-teal-50">
 
             {/* sign Up form */}
             <div className="flex justify-center items-center h-screen">
-                <Card color="transparent" shadow={false} className="bg-blue-gray-900 text-white px-10 py-8">
-                    <Typography variant="h4" className="text-white">
+                <Card color="transparent" shadow={false} className="bg-amber-100 text-blue-gray-900 px-10 py-8 border-b-[3px] border-b-amber-800">
+                    <Typography variant="h4" className="">
                         Login
                     </Typography>
                     <Typography color="gray" className="mt-1 font-normal">
@@ -39,7 +39,7 @@ const Login = () => {
                     </Typography>
                     <form onSubmit={handleSubmit(onSubmit)} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                         <div className="mb-1 flex flex-col gap-6">
-                            <Typography variant="h6" color="white" className="-mb-3">
+                            <Typography variant="h6" className="-mb-3">
                                 Your Email
                             </Typography>
                             <Input  {...register("email")} name="email"
@@ -50,7 +50,7 @@ const Login = () => {
                                     className: "before:content-none after:content-none",
                                 }}
                             />
-                            <Typography variant="h6" color="white" className="-mb-3">
+                            <Typography variant="h6" className="-mb-3">
                                 Password
                             </Typography>
                             <Input  {...register("password")} name="password"
@@ -63,7 +63,7 @@ const Login = () => {
                                 }}
                             />
                         </div>
-                        <Checkbox
+                        {/* <Checkbox
                             label={
                                 <Typography
                                     variant="small"
@@ -80,17 +80,17 @@ const Login = () => {
                                 </Typography>
                             }
                             containerProps={{ className: "-ml-2.5" }}
-                        />
+                        /> */}
                         <br />
                         {/* <Input
                             type="submit" value="Sign In" 
                         /> */}
-                        <input type="submit" value="Login" className="font-medium bg-black w-full py-2 rounded-lg cursor-pointer block text-center text-white mt-4" />
+                        <input type="submit" value="Login" className="font-medium bg-amber-800 w-full py-2 rounded-lg cursor-pointer block text-center text-white mt-4" />
 
                         <Typography color="gray" className="mt-4 text-center font-normal">
                             New to this site?{" "}
 
-                            <a href="/signUp" className="font-medium text-gray-300">
+                            <a href="/signUp" className="text-blue-700 font-semibold hover:underline">
                                 Sign Up
                             </a>
                         </Typography>
