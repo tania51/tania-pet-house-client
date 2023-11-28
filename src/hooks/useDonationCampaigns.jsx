@@ -3,20 +3,22 @@ import useAxiosPublic from "./useAxiosPublic";
 import useAuth from "./useAuth";
 
 
+// donated information
+
 const useDonationCampaigns = () => {
     const axiosPublic = useAxiosPublic();
     const {user} = useAuth();
 
-    const {refetch, data: donationCampaigns=[]} = useQuery({
+    const {isLoading, refetch, data: donationCampaigns=[]} = useQuery({
         queryKey: ['donation-campaigns'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`http://localhost:5008/donation-campaigns/${user?.email}`)
+            const res = await axiosPublic.get(`/donation-campaigns/${user?.email}`)
             // console.log(res.data);
             return res.data
         }
     })
 
-    return [donationCampaigns, refetch]
+    return [donationCampaigns, refetch, isLoading]
 };
 
 export default useDonationCampaigns;

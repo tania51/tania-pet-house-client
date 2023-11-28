@@ -9,19 +9,21 @@ import useAllPet from "../../../hooks/useAllPet";
 const CheckoutForm = ({ petDetail }) => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('')
-    const [amount, setAmount] = useState(0)
+    const [newAmount, setAmount] = useState(0)
     const [clientSecret, setClientSecret] = useState('')
     const [transactionId, setTransactionId] = useState('')
     const [doantionError, setDonationError] = useState('')
     const [, refetch] = useAllPet();
-    console.log('transaction id: ', transactionId);
+    // console.log('transaction id: ', transactionId);
+    const amount = parseInt(newAmount)
+    console.log('amount', amount);
 
     const stripe = useStripe();
     const elements = useElements();
     const axiosPublic = useAxiosPublic();
     const { user } = useAuth();
     const { _id, pet_id, name, donated_amount, maximum_donation_amount } = petDetail;
-    console.log(petDetail);
+    // console.log(petDetail);
 
 
     useEffect(() => {
@@ -48,7 +50,7 @@ const CheckoutForm = ({ petDetail }) => {
         if (maximum_donation_amount >= totalDonationAmount) {
 
             console.log('totalDonationAmount: ', totalDonationAmount);
-            setAmount(totalDonationAmount)
+            // setAmount(totalDonationAmount)
         }
         else {
             setDonationError(`Donation Amount is Already Equal or Higher to Maximum Donation Amount. Please Donate between 1 to ${newDonationAmount}`)
@@ -136,6 +138,7 @@ const CheckoutForm = ({ petDetail }) => {
                 <div className="mb-4">
                     <label>Amount</label>
                     <Input
+                    onChange={(e) => setAmount(e.target.value)}
                         type="tel"
                         name="donationAmount"
                         placeholder="Donation Amount"

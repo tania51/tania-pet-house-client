@@ -1,7 +1,6 @@
 import {
     Card,
     Input,
-    Checkbox,
     Typography,
 } from "@material-tailwind/react";
 import { useForm } from "react-hook-form";
@@ -42,7 +41,7 @@ const Login = () => {
                             <Typography variant="h6" className="-mb-3">
                                 Your Email
                             </Typography>
-                            <Input  {...register("email")} name="email"
+                            <Input {...register("email")} name="email"
                                 size="lg"
                                 placeholder="name@mail.com"
                                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -63,28 +62,7 @@ const Login = () => {
                                 }}
                             />
                         </div>
-                        {/* <Checkbox
-                            label={
-                                <Typography
-                                    variant="small"
-                                    color="gray"
-                                    className="flex items-center font-normal"
-                                >
-                                    I agree the
-                                    <a
-                                        href="#"
-                                        className="font-medium transition-colors hover:text-gray-900"
-                                    >
-                                        &nbsp;Terms and Conditions
-                                    </a>
-                                </Typography>
-                            }
-                            containerProps={{ className: "-ml-2.5" }}
-                        /> */}
                         <br />
-                        {/* <Input
-                            type="submit" value="Sign In" 
-                        /> */}
                         <input type="submit" value="Login" className="font-medium bg-amber-800 w-full py-2 rounded-lg cursor-pointer block text-center text-white mt-4" />
 
                         <Typography color="gray" className="mt-4 text-center font-normal">

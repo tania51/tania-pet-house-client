@@ -9,7 +9,7 @@ import {
 import Container from "../../components/Shared/Container/Container";
 
 // for adoption button
-import React from "react";
+import React, { useState } from "react";
 import {
     Dialog,
     CardFooter,
@@ -27,19 +27,24 @@ import Title from "../../components/Shared/Title/Title";
 
 const PetDetails = () => {
     const petDetail = useLoaderData();
-    const { register, handleSubmit } = useForm()
-    const { _id, image, name, age, category, location } = petDetail;
+    const { register, handleSubmit, reset } = useForm()
+    const [error, setError] = useState('')
+    const { _id, image, name, age, category, location, adopted } = petDetail;
     const axiosPublic = useAxiosPublic();
     const [allPet] = useAllPet();
     const filterdPet = allPet.filter(aPet => aPet._id !== _id)
+    // console.log(allPet);
 
     // logged in users info
     const { user } = useAuth();
     const { email, displayName } = user;
 
     const onSubmit = (data) => {
+        if(adopted === true) {
+            return setError(`${name} is Already Adopted.`)
+        }
 
-        // console.log(data)
+        console.log(data)
         if(user && user.email) {
             const number = data.number;
             const address = data.address;
@@ -49,11 +54,15 @@ const PetDetails = () => {
                 email: email,
                 name: displayName,
                 phn_Number: number,
-                address: address
+                address: address,
+                adopted: true
             }
-            axiosPublic.post('http://localhost:5008/adoptedPet', adoptedUserInfo)
+            console.log(adoptedUserInfo);
+            axiosPublic.post('/adoptedPet', adoptedUserInfo)
             .then(res => {
                 console.log(res.data);
+                reset()
+                
             })
         }
         else {
@@ -111,7 +120,7 @@ const PetDetails = () => {
                                 if (result.isConfirmed) {
                                   Swal.fire({
                                     title: "Deleted!",
-                                    text: "Your file has been deleted.",
+                                    text: "Your Pet has been deleted.",
                                     icon: "success"
                                   });
                                 }
@@ -150,6 +159,7 @@ const PetDetails = () => {
                                         <Typography variant="h4" color="blue-gray">
                                             Happy Adoption!!
                                         </Typography>
+                                        <p className="text-red-700 text-lg">{error}</p>
 
                                         {/* users email */}
                                         <Typography className="-mb-2" variant="h6">
@@ -181,7 +191,7 @@ const PetDetails = () => {
                                         
                                         Submit
                                     </Button> */}
-                                        <input type="submit" value="Login" className="font-medium bg-amber-800 w-full py-2 rounded-lg cursor-pointer block text-center text-white mt-4" />
+                                        <input type="submit" value="Adopt" className="font-medium bg-amber-800 w-full py-2 rounded-lg cursor-pointer block text-center text-white mt-4" />
                                     </CardFooter>
                                 </Card>
                             </form>

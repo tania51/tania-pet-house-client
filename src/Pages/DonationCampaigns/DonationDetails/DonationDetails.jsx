@@ -33,6 +33,7 @@ const DonationDetails = () => {
     const petDetail = useLoaderData();
     const { register, handleSubmit } = useForm()
     const { _id, image, name, category, maximum_donation_amount, donated_amount } = petDetail;
+    // console.log(petDetail.image);
     const axiosPublic = useAxiosPublic();
     const [allPet, refetch] = useAllPet();
     const filterdPet = allPet.filter(aPet => aPet._id !== _id)

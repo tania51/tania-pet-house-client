@@ -18,6 +18,7 @@ import MyDonations from "../DashBoard/UserPages/MyDonations/MyDonations";
 import DashBoardContent from "../DashBoard/DashBoard/DashBoardContent/DashBoardContent";
 import DonationCampaigns from "../Pages/DonationCampaigns/DonationCampaigns";
 import DonationDetails from "../Pages/DonationCampaigns/DonationDetails/DonationDetails";
+import EditMyDonationCampaign from "../DashBoard/UserPages/MyDonationCampaign/EditMyDonationCampaign";
 
 
 const router = createBrowserRouter([
@@ -79,7 +80,8 @@ const router = createBrowserRouter([
         },
         {
           path: "adoptionRequest",
-          element: <PrivateRoute><AdoptionRequest></AdoptionRequest></PrivateRoute>
+          element: <PrivateRoute><AdoptionRequest></AdoptionRequest></PrivateRoute>,
+          loader: () => fetch(`http://localhost:5008/adoptedPet`)
         },
         {
           path: "createDonationCampaign",
@@ -89,6 +91,11 @@ const router = createBrowserRouter([
           path: "myDonationCampaign",
           element: <PrivateRoute><MyDonationCampaign></MyDonationCampaign></PrivateRoute>,
           // loader: ({params}) => fetch(`http://localhost:5008/donation-campaigns/${params.email}`)
+        },
+        {
+          path: "myDonationCampaign/edit/:id",
+          element: <EditMyDonationCampaign></EditMyDonationCampaign>,
+          loader: ({params}) => fetch(`http://localhost:5008/my-donation-campaigns/${params.id}`)
         },
         {
           path: "myDonations",

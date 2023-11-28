@@ -3,7 +3,7 @@
 const Secret = () => {
     return (
         <div>
-            this is secret page
+            this is secret
         </div>
     );
 };
