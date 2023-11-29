@@ -3,20 +3,20 @@ import useAxiosPublic from "./useAxiosPublic";
 
 
 
-const useAllPet = () => {
+const useUsers = () => {
     
     const axiosPublic = useAxiosPublic();
 
-    const {refetch, data: allPet=[]} = useQuery({
-        queryKey: ['all-pet'],
+    const {refetch, data: users=[]} = useQuery({
+        queryKey: ['users'],
         queryFn: async () => {
-            const res = await axiosPublic.get('/all-pets')
+            const res = await axiosPublic.get('/users')
             // console.log(res.data);
             return res.data
         }
     })
 
-    return [allPet, refetch]
+    return [users, refetch]
 };
 
-export default useAllPet;
+export default useUsers;

@@ -1,14 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+
 import Title from "../../../components/Shared/Title/Title";
 import { Card, Typography } from "@material-tailwind/react";
-import { useState } from "react";
+import useAdoptionRequestPets from "../../../hooks/useAdoptionRequestPets";
 
 
 const AdoptionRequest = () => {
-    const adoptedPet = useLoaderData();
-    const [adoptedBtn, setAdoptedBtn] = useState(false)
-    // console.log(adoptedPet);
-    console.log(adoptedBtn);
+    const [adoptedRequestPets] = useAdoptionRequestPets();
 
    
 
@@ -71,7 +68,7 @@ const AdoptionRequest = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {adoptedPet && adoptedPet.map(({ _id, name, email, phn_Number, adopted }) => (
+                            {adoptedRequestPets && adoptedRequestPets.map(({ _id, name, email, phn_Number, adopted }) => (
                                 <tr key={name} className="even:bg-blue-gray-50/50">
                                     <td className="p-4">
                                         <Typography variant="small" color="blue-gray" className="font-normal">

@@ -19,6 +19,9 @@ import DashBoardContent from "../DashBoard/DashBoard/DashBoardContent/DashBoardC
 import DonationCampaigns from "../Pages/DonationCampaigns/DonationCampaigns";
 import DonationDetails from "../Pages/DonationCampaigns/DonationDetails/DonationDetails";
 import EditMyDonationCampaign from "../DashBoard/UserPages/MyDonationCampaign/EditMyDonationCampaign";
+import Users from "../DashBoard/AdminPages/Users/Users";
+import AllPets from "../DashBoard/AdminPages/AllPets/AllPets";
+import AllDonations from "../DashBoard/AdminPages/AllDonations/AllDonations";
 
 
 const router = createBrowserRouter([
@@ -66,6 +69,7 @@ const router = createBrowserRouter([
       path: "/dashBoard",
       element: <DashBoard></DashBoard>,
       children: [
+        // users and admin routes
         {
           path: "/dashBoard",
           element: <DashBoardContent></DashBoardContent>
@@ -80,8 +84,7 @@ const router = createBrowserRouter([
         },
         {
           path: "adoptionRequest",
-          element: <PrivateRoute><AdoptionRequest></AdoptionRequest></PrivateRoute>,
-          loader: () => fetch(`http://localhost:5008/adoptedPet`)
+          element: <PrivateRoute><AdoptionRequest></AdoptionRequest></PrivateRoute>
         },
         {
           path: "createDonationCampaign",
@@ -100,6 +103,21 @@ const router = createBrowserRouter([
         {
           path: "myDonations",
           element: <PrivateRoute><MyDonations></MyDonations></PrivateRoute>
+        },
+        // only admin routes
+        {
+          path: "users",
+          element: <PrivateRoute><Users></Users></PrivateRoute>,
+          loader: () => fetch(`http://localhost:5008/users`)
+        },
+        {
+          path: "admin/allPets",
+          element: <PrivateRoute><AllPets></AllPets></PrivateRoute>,
+          loader: () => fetch(`http://localhost:5008/all-pets`)
+        },
+        {
+          path: "admin/allDonation",
+          element: <PrivateRoute><AllDonations></AllDonations></PrivateRoute>
         },
       ]
     }
