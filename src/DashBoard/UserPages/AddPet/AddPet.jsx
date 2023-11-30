@@ -125,12 +125,16 @@ const AddPet = () => {
                             if (res.data.insertedId) {
                                 Swal.fire({
                                     icon: "success",
-                                    title: "Donation Campaign Created Successfully !!",
+                                    title: "Pet Added Successfully !!",
                                     showConfirmButton: false,
                                     timer: 1500
                                 });
                             }
                             handleReset();
+                        })
+                    axiosSecure.post('/all-added-pets', addPet)
+                        .then(res => {
+                            console.log(res.data);
                         })
                 })
 

@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const { register, handleSubmit, reset } = useForm()
@@ -22,6 +23,15 @@ const Login = () => {
             reset();
             console.log(res.user);
             navigate(fromPage, { replace: true });
+        })
+        .catch(err => {
+            Swal.fire({
+                text: err,
+                color: 'red',
+                fontSize: '14px',
+                paddingTop: '10px',
+                paddingBottom: '10px'
+              })
         })
     }
 

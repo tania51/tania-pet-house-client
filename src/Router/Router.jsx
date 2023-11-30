@@ -67,12 +67,12 @@ const router = createBrowserRouter([
     },
     {
       path: "/dashBoard",
-      element: <DashBoard></DashBoard>,
+      element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
       children: [
         // users and admin routes
         {
           path: "/dashBoard",
-          element: <DashBoardContent></DashBoardContent>
+          element: <PrivateRoute><DashBoardContent></DashBoardContent></PrivateRoute>
         },
         {
           path: "addPet",

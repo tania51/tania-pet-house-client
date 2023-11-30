@@ -1,7 +1,6 @@
 import {
     Card,
     Input,
-    Checkbox,
     Typography,
 } from "@material-tailwind/react";
 import { useForm } from "react-hook-form";
@@ -20,7 +19,17 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const onSubmit = (data) => {
-        createUser(data.email, data.password)
+        console.log(data.password);
+        if(! /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{6,}$/.test(data.password)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Password Should be atleast 6 charecters, one capital letter and one special charecter',
+                color: 'red',
+                padding: '4px'
+              })
+        }
+        else {
+            createUser(data.email, data.password)
             .then(res => {
                 console.log(res.user);
                 updateProfile(auth.currentUser, {
@@ -58,6 +67,10 @@ const SignUp = () => {
 
 
             })
+        }
+            
+
+        
     }
 
     const googleSignUpHandeler = () => {

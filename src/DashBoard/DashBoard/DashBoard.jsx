@@ -1,13 +1,15 @@
+import StickyNavbar from "../../components/Shared/Navbar/Navbar";
 import Sidebar from "./DashBoardContent/Sidebar";
-import TopNavbar from "./DashBoardContent/TopNavbar";
 
 
 const DashBoard = () => {
     // const isAdmin = true;
     return (
         <div>
-            <TopNavbar></TopNavbar>
+            <StickyNavbar></StickyNavbar>
+            <div className="bg-teal-50">
             <Sidebar></Sidebar>
+            </div>
         </div>
     );
 };

@@ -4,7 +4,7 @@ import Title from "../../../components/Shared/Title/Title";
 import useDonationCampaigns from "../../../hooks/useDonationCampaigns";
 import { Card, Progress, Typography } from "@material-tailwind/react";
 import { CiEdit } from "react-icons/ci";
-import { FaRegPauseCircle } from "react-icons/fa";
+import { FaPlay, FaPlayCircle, FaRegPauseCircle } from "react-icons/fa";
 import { MdCalendarViewDay } from "react-icons/md";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -174,8 +174,15 @@ const MyDonationCampaign = () => {
 
                                                         {/* pause button */}
                                                         <td className={classes}>
-                                                            <Typography color="blue-gray" className="font-normal text-xl text-teal-900 cursor-pointer">
-                                                                <FaRegPauseCircle onClick={() => setPause(!pause)} />
+                                                            <Typography  color="blue-gray" className="font-normal text-xl text-teal-900 cursor-pointer">
+                                                                <button onClick={() => setPause(!pause)}>
+                                                                {
+                                                                    pause ? <FaRegPauseCircle />
+                                                                    :
+                                                                    <FaPlayCircle />
+                                                                }
+                                                                </button>
+                                                                
                                                             </Typography>
                                                         </td>
 

@@ -82,7 +82,8 @@ const DonationDetails = () => {
 
 
     return (
-        <div className="py-0 lg:py-20 lg:px-20">
+        <div className="mb-20">
+            <div className="py-0 lg:py-20 lg:px-20">
             <Container>
                 <Card className="w-full flex-row">
                     <CardHeader
@@ -170,14 +171,20 @@ const DonationDetails = () => {
                     </CardBody>
                 </Card>
 
-                {/* for adoption more pet */}
-                <Title heading="some more pet for addoption!!"></Title>
+                
+            </Container>
+        </div>
+        <Container>
+            {/* for adoption more pet */}
+            <div className="lg:-mt-14">
+            <Title heading="3 More Active Donation Campaign!!"></Title>
+            </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 lg:mt-10">
                 {
                     filterdPet && filterdPet.slice(0, 3).map(aPet => <SinglePet key={aPet._id} aPet={aPet}></SinglePet>)
                 }
             </div>
-            </Container>
+        </Container>
         </div>
     );
 };

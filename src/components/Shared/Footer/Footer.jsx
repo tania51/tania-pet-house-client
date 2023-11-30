@@ -1,70 +1,80 @@
 import { Typography } from "@material-tailwind/react";
+import { Link, NavLink } from "react-router-dom";
 
 
-
-const LINKS = [
-    {
-        title: "Product",
-        items: ["Overview", "Features", "Solutions", "Tutorials"],
-    },
-    {
-        title: "Company",
-        items: ["About us", "Careers", "Press", "News"],
-    },
-    {
-        title: "Resource",
-        items: ["Blog", "Newsletter", "Events", "Help center"],
-    },
-];
 
 const currentYear = new Date().getFullYear();
 
 const Footer = () => {
-    
+
 
     return (
         <div>
             <footer className="relative w-full">
-                <div className="mx-auto w-full max-w-7xl px-8">
-                    <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-                        <Typography variant="h5" className="mb-6">
-                            Material Tailwind
-                        </Typography>
-                        <div className="grid grid-cols-3 justify-between gap-4">
-                            {LINKS.map(({ title, items }) => (
-                                <ul key={title}>
+                <div className="mx-auto w-full max-w-7xl">
+                    <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2 px-8 py-7 bg-amber-50">
+                        
+                        <div className="grid grid-cols-2 lg:ml-20 justify-between gap-4">
+                            <ul>
+                                <Typography
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="mb-3 font-medium opacity-40"
+                                >
+                                    Pages
+                                </Typography>
+                                <li>
                                     <Typography
-                                        variant="small"
-                                        color="blue-gray"
-                                        className="mb-3 font-medium opacity-40"
+                                        as="a"
+                                        href="#"
+                                        color="gray"
+                                        className="py-1.5 font-normal transition-colors hover:text-blue-gray-900 flex flex-col space-y-3"
                                     >
-                                        {title}
+                                        <NavLink className="mr-3" to="/">Home</NavLink>
+                                        <NavLink className="mr-3" to="/petListing">Pet Listing</NavLink>
+                                        <NavLink className="mr-3" to="/donationCampaigns">Donation Campaigns</NavLink>
+                                        <NavLink className="mr-3" to="/secret">Secret</NavLink>
                                     </Typography>
-                                    {items.map((link) => (
-                                        <li key={link}>
-                                            <Typography
-                                                as="a"
-                                                href="#"
-                                                color="gray"
-                                                className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
-                                            >
-                                                {link}
-                                            </Typography>
-                                        </li>
-                                    ))}
-                                </ul>
-                            ))}
+                                </li>
+                            </ul>
+
+                            {/* dashBoard */}
+                            <ul>
+                                <Typography
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="mb-3 font-medium opacity-40"
+                                >
+                                    DashBoard
+                                </Typography>
+                                <li>
+                                    <Typography
+                                        as="a"
+                                        href="#"
+                                        color="gray"
+                                        className="py-1.5 font-normal transition-colors hover:text-blue-gray-900 flex flex-col space-y-3"
+                                    >
+                                        <Link to="/dashBoard">Dashboard</Link>
+                                        <Link to="/dashBoard/addPet">Add a pet</Link>
+                                        <Link to="/dashBoard/myAddedPets">My added pets</Link>
+                                        <Link to="/dashBoard/adoptionRequest">Adoption Request</Link>
+                                    </Typography>
+                                </li>
+                            </ul>
                         </div>
+                        <Typography variant="h5" className="flex items-center lg:ml-24">
+                            <img src="https://i.ibb.co/TRRy90v/pet-house.png" alt="PET HOUSE" />
+                        </Typography>
                     </div>
-                    <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
+                    <div className="pt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between text-white md:mb-0 bg-teal-900 px-8">
                         <Typography
                             variant="small"
-                            className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
+                            className="mb-4 text-center font-normal"
                         >
-                            &copy; {currentYear} <a href="https://material-tailwind.com/">Material Tailwind</a>. All
+                            &copy; {currentYear} <a href="https://material-tailwind.com/">PET HOUSE</a>. All
                             Rights Reserved.
                         </Typography>
-                        <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
+                        <div className="flex gap-4 text-white sm:justify-center">
                             <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
                                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path

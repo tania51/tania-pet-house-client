@@ -138,7 +138,7 @@ function StickyNavbar() {
   );
 
   return (
-    <div className="-m-6 pet-navbar max-h-[768px] w-[calc(100%+48px)] bg-white lg:pt-4">
+    <div className="-mt-6 -mb-6 pet-navbar max-h-[768px] bg-white lg:pt-4">
       <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
         <div className="flex items-center justify-around text-blue-gray-900">
           <Typography
@@ -146,7 +146,7 @@ function StickyNavbar() {
             href="/"
             className="mr-4 cursor-pointer py-1.5 font-medium"
           >
-            Material Tailwind
+            <img className="h-16" src="https://i.ibb.co/TRRy90v/pet-house.png" alt="PET HOUSE" />
           </Typography>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>

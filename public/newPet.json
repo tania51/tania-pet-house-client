@@ -10,7 +10,8 @@
         "maximum_donation_amount": 100,
         "donated_amount": 75,
         "short_des": "Playful cat looking for a loving home.",
-        "long_des": "Whiskers is a playful and affectionate cat. He loves chasing after toys and curling up in warm spots. Whiskers is looking for a loving home where he can bring joy and companionship."
+        "long_des": "Whiskers is a playful and affectionate cat. He loves chasing after toys and curling up in warm spots. Whiskers is looking for a loving home where he can bring joy and companionship.",
+        "adopted": false
     },
     {
         "pet_id": 2,
@@ -23,7 +24,8 @@
         "maximum_donation_amount": 150,
         "donated_amount": 120,
         "short_des": "Friendly dog in search of a forever family.",
-        "long_des": "Buddy is a friendly and well-trained dog. He enjoys long walks, playing fetch, and spending time with people. Buddy is looking for a forever family that can provide him with love and care."
+        "long_des": "Buddy is a friendly and well-trained dog. He enjoys long walks, playing fetch, and spending time with people. Buddy is looking for a forever family that can provide him with love and care.",
+        "adopted": false
     },
     {
         "pet_id": 3,
@@ -36,7 +38,8 @@
         "maximum_donation_amount": 50,
         "donated_amount": 30,
         "short_des": "Adorable rabbit seeking a gentle home.",
-        "long_des": "Thumper is an adorable and gentle rabbit. He enjoys nibbling on fresh vegetables and hopping around in a secure, indoor space. Thumper is looking for a caring home where he can explore and be part of the family."
+        "long_des": "Thumper is an adorable and gentle rabbit. He enjoys nibbling on fresh vegetables and hopping around in a secure, indoor space. Thumper is looking for a caring home where he can explore and be part of the family.",
+        "adopted": false
     },
     {
         "pet_id": 4,
@@ -49,7 +52,8 @@
         "maximum_donation_amount": 120,
         "donated_amount": 90,
         "short_des": "Gentle cat seeking a calm and cozy home.",
-        "long_des": "Luna is a gentle and laid-back cat. She enjoys lounging by the window and receiving gentle pets. Luna is looking for a calm and cozy home where she can relax and be part of a loving family."
+        "long_des": "Luna is a gentle and laid-back cat. She enjoys lounging by the window and receiving gentle pets. Luna is looking for a calm and cozy home where she can relax and be part of a loving family.",
+        "adopted": false
     },
     {
         "pet_id": 5,
@@ -62,7 +66,8 @@
         "maximum_donation_amount": 200,
         "donated_amount": 150,
         "short_des": "Energetic dog ready for outdoor adventures.",
-        "long_des": "Max is an energetic and playful dog. He loves outdoor adventures, whether it's hiking, running, or playing fetch. Max is looking for an active family that can provide him with plenty of exercise and love."
+        "long_des": "Max is an energetic and playful dog. He loves outdoor adventures, whether it's hiking, running, or playing fetch. Max is looking for an active family that can provide him with plenty of exercise and love.",
+        "adopted": false
     },
     {
         "pet_id": 6,
@@ -75,7 +80,8 @@
         "maximum_donation_amount": 60,
         "donated_amount": 45,
         "short_des": "Playful rabbit looking for a bunny-friendly home.",
-        "long_des": "Cottontail is a playful and curious rabbit. He enjoys hopping around and exploring bunny-safe environments. Cottontail is looking for a home with bunny companionship and lots of bunny-friendly toys."
+        "long_des": "Cottontail is a playful and curious rabbit. He enjoys hopping around and exploring bunny-safe environments. Cottontail is looking for a home with bunny companionship and lots of bunny-friendly toys.",
+        "adopted": false
     },
     {
         "pet_id": 7,
@@ -88,7 +94,8 @@
         "maximum_donation_amount": 90,
         "donated_amount": 70,
         "short_des": "Sweet cat in search of a loving lap.",
-        "long_des": "Oliver is a sweet and affectionate cat. He loves curling up on laps and purring softly. Oliver is looking for a loving home where he can receive the attention and care he deserves."
+        "long_des": "Oliver is a sweet and affectionate cat. He loves curling up on laps and purring softly. Oliver is looking for a loving home where he can receive the attention and care he deserves.",
+        "adopted": false
     },
     {
         "pet_id": 8,
@@ -101,7 +108,8 @@
         "maximum_donation_amount": 180,
         "donated_amount": 130,
         "short_des": "Gentle dog seeking a peaceful home.",
-        "long_des": "Daisy is a gentle and well-behaved dog. She enjoys leisurely walks and relaxing in a cozy bed. Daisy is looking for a peaceful home where she can be a loving companion."
+        "long_des": "Daisy is a gentle and well-behaved dog. She enjoys leisurely walks and relaxing in a cozy bed. Daisy is looking for a peaceful home where she can be a loving companion.",
+        "adopted": false
     },
     {
         "pet_id": 9,
@@ -114,7 +122,8 @@
         "maximum_donation_amount": 70,
         "donated_amount": 50,
         "short_des": "Adorable rabbit ready for cuddles.",
-        "long_des": "Flopsy is an adorable and cuddly rabbit. He enjoys being held and receiving gentle cuddles. Flopsy is looking for a home where he can share affection and be part of a loving family."
+        "long_des": "Flopsy is an adorable and cuddly rabbit. He enjoys being held and receiving gentle cuddles. Flopsy is looking for a home where he can share affection and be part of a loving family.",
+        "adopted": false
     },
     {
         "pet_id": 10,
@@ -127,7 +136,8 @@
         "maximum_donation_amount": 110,
         "donated_amount": 80,
         "short_des": "Majestic cat looking for a royal home.",
-        "long_des": "Simba is a majestic and regal cat. He enjoys lounging in high places and observing his surroundings. Simba is looking for a royal home where he can be treated like the king he is."
+        "long_des": "Simba is a majestic and regal cat. He enjoys lounging in high places and observing his surroundings. Simba is looking for a royal home where he can be treated like the king he is.",
+        "adopted": false
     },
     {
         "pet_id": 11,
@@ -140,7 +150,8 @@
         "maximum_donation_amount": 160,
         "donated_amount": 110,
         "short_des": "Courageous dog seeking an adventurous family.",
-        "long_des": "Rocky is a courageous and adventurous dog. He loves exploring new places and going on outdoor adventures. Rocky is looking for an active family that shares his love for excitement and exploration."
+        "long_des": "Rocky is a courageous and adventurous dog. He loves exploring new places and going on outdoor adventures. Rocky is looking for an active family that shares his love for excitement and exploration.",
+        "adopted": false
     },
     {
         "pet_id": 12,
@@ -153,7 +164,8 @@
         "maximum_donation_amount": 80,
         "donated_amount": 60,
         "short_des": "Fluffy rabbit with a gentle disposition.",
-        "long_des": "Thistle is a fluffy and gentle rabbit. He enjoys lounging in comfortable spaces and nibbling on fresh hay. Thistle is looking for a home where he can bring joy and fluffiness."
+        "long_des": "Thistle is a fluffy and gentle rabbit. He enjoys lounging in comfortable spaces and nibbling on fresh hay. Thistle is looking for a home where he can bring joy and fluffiness.",
+        "adopted": false
     },
     {
         "pet_id": 13,
@@ -166,7 +178,8 @@
         "maximum_donation_amount": 130,
         "donated_amount": 100,
         "short_des": "Playful cat with a penchant for toys.",
-        "long_des": "Mittens is a playful and curious cat. She loves playing with various toys and chasing after anything that moves. Mittens is looking for a home with plenty of toys and playtime."
+        "long_des": "Mittens is a playful and curious cat. She loves playing with various toys and chasing after anything that moves. Mittens is looking for a home with plenty of toys and playtime.",
+        "adopted": false
     },
     {
         "pet_id": 14,
@@ -179,7 +192,8 @@
         "maximum_donation_amount": 190,
         "donated_amount": 140,
         "short_des": "Loyal dog in search of a devoted companion.",
-        "long_des": "Charlie is a loyal and devoted dog. He enjoys being by your side, whether it's for a walk, a nap, or a cuddle session. Charlie is looking for a loving companion who will appreciate his loyalty and affection."
+        "long_des": "Charlie is a loyal and devoted dog. He enjoys being by your side, whether it's for a walk, a nap, or a cuddle session. Charlie is looking for a loving companion who will appreciate his loyalty and affection.",
+        "adopted": false
     },
     {
         "pet_id": 15,
@@ -192,7 +206,8 @@
         "maximum_donation_amount": 55,
         "donated_amount": 40,
         "short_des": "Adorable rabbit with a love for exploration.",
-        "long_des": "Hazel is an adorable and curious rabbit. She enjoys exploring new environments and hopping around to discover interesting spots. Hazel is looking for a home where she can continue her adventures and be part of a caring family."
+        "long_des": "Hazel is an adorable and curious rabbit. She enjoys exploring new environments and hopping around to discover interesting spots. Hazel is looking for a home where she can continue her adventures and be part of a caring family.",
+        "adopted": false
     },
     {
         "pet_id": 16,
@@ -205,7 +220,8 @@
         "maximum_donation_amount": 100,
         "donated_amount": 75,
         "short_des": "Graceful cat seeking a serene home.",
-        "long_des": "Nala is a graceful and serene cat. She enjoys quiet moments and basking in the sunlight. Nala is looking for a serene home where she can be the queen of tranquility."
+        "long_des": "Nala is a graceful and serene cat. She enjoys quiet moments and basking in the sunlight. Nala is looking for a serene home where she can be the queen of tranquility.",
+        "adopted": false
     },
     {
         "pet_id": 17,
@@ -218,7 +234,8 @@
         "maximum_donation_amount": 150,
         "donated_amount": 120,
         "short_des": "Playful dog with a love for games.",
-        "long_des": "Duke is a playful and energetic dog. He loves playing games, especially fetch and tug-of-war. Duke is looking for a family that enjoys playtime and can keep up with his playful spirit."
+        "long_des": "Duke is a playful and energetic dog. He loves playing games, especially fetch and tug-of-war. Duke is looking for a family that enjoys playtime and can keep up with his playful spirit.",
+        "adopted": false
     },
     {
         "pet_id": 18,
@@ -231,7 +248,8 @@
         "maximum_donation_amount": 65,
         "donated_amount": 50,
         "short_des": "Charming rabbit with a sweet disposition.",
-        "long_des": "Mocha is a charming and sweet rabbit. He enjoys gentle pets and interacting with his human friends. Mocha is looking for a home where he can share his sweetness and bring joy to those around him."
+        "long_des": "Mocha is a charming and sweet rabbit. He enjoys gentle pets and interacting with his human friends. Mocha is looking for a home where he can share his sweetness and bring joy to those around him.",
+        "adopted": false
     },
     {
         "pet_id": 19,
@@ -244,7 +262,8 @@
         "maximum_donation_amount": 120,
         "donated_amount": 90,
         "short_des": "Affectionate cat in search of a loving lap.",
-        "long_des": "Whiskey is an affectionate and loving cat. He enjoys curling up on laps and purring softly. Whiskey is looking for a home where he can receive the attention and love he craves."
+        "long_des": "Whiskey is an affectionate and loving cat. He enjoys curling up on laps and purring softly. Whiskey is looking for a home where he can receive the attention and love he craves.",
+        "adopted": false
     },
     {
         "pet_id": 20,
@@ -257,6 +276,7 @@
         "maximum_donation_amount": 180,
         "donated_amount": 140,
         "short_des": "Elegant dog with a flair for fashion.",
-        "long_des": "Bella is an elegant and stylish dog. She enjoys dressing up in fashionable accessories and strutting her stuff. Bella is looking for a family that appreciates her sense of style and can provide her with the love she deserves."
+        "long_des": "Bella is an elegant and stylish dog. She enjoys dressing up in fashionable accessories and strutting her stuff. Bella is looking for a family that appreciates her sense of style and can provide her with the love she deserves.",
+        "adopted": false
     }
 ]

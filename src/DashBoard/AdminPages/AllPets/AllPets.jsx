@@ -1,18 +1,17 @@
 
 import { Card, Typography } from "@material-tailwind/react";
 import Title from "../../../components/Shared/Title/Title";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useQuery } from "@tanstack/react-query";
 import useAllPet from "../../../hooks/useAllPet";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
-import { FaUsers } from "react-icons/fa";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useMyAddedPets from "../../../hooks/useMyAddedPets";
 
 
 const AllPets = () => {
     const [allPet, refetch] = useAllPet();
-    console.log(allPet);
+    const [myAddPet] = useMyAddedPets();
+    console.log(myAddPet);
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
 
@@ -38,14 +37,14 @@ const AllPets = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosPublic.delete(`/all-pets/${id}`)
+                axiosPublic.delete(`/my-added-pets/${id}`)
                     .then(res => {
                         console.log(res.data);
                         if (res.data.deletedCount > 0) {
                             refetch();
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "Pet has been deleted.",
                                 icon: "success"
                             });
                         }
@@ -69,33 +68,37 @@ const AllPets = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, Change the Status"
-          }).then(async(result) => {
+        }).then(async (result) => {
             if (result.isConfirmed) {
                 const newPet = {
                     id: aPet._id,
                     adopted: aPet.adopted,
                 }
                 console.log(newPet);
-                const updateRes = await axiosSecure.patch(`/all-pets/${aPet._id}`, newPet)
+                const updateRes = await axiosSecure.patch(`/my-added-pets/${aPet._id}`, newPet)
                 console.log(updateRes.data);
-                    if(updateRes.data.modifiedCount > 0) {
-                        refetch()
-                        Swal.fire({
-                            title: "Updated!",
-                            text: `some is admin now.`,
-                            icon: "success"
-                          });
-                    }
+                if (updateRes.data.modifiedCount > 0) {
+                    refetch()
+                    Swal.fire({
+                        title: "Updated!",
+                        text: `Status Updated Successfully.`,
+                        icon: "success"
+                    });
+                }
 
-              
+
             }
-          });
+        });
     }
 
     return (
         <div>
-            <div className="-mt-10 mb-4">
-                <div><Title heading="All Pets"></Title>({allPet.length})</div>
+            {
+                myAddPet.length === 0 ? <p className="text-2xl text-red-900 h-[70vh] flex items-center justify-center w-full">There is No Pet. Please Add First!!</p>
+                :
+                <>
+                    <div className="-mt-10 mb-4">
+                <div><Title heading="All Pets"></Title></div>
             </div>
             <div>
                 <Card className="h-full w-full overflow-scroll">
@@ -178,67 +181,67 @@ const AllPets = () => {
 
                                 })
                             } */}
-                            {allPet && allPet.map(aPet => <tr key={aPet._id} className="even:bg-blue-gray-50/50">
-                                    <td className="p-4">
-                                        <Typography variant="small" color="blue-gray" className="font-normal">
-                                            {aPet.name}
-                                        </Typography>
-                                    </td>
+                            {myAddPet && myAddPet.map(aPet => <tr key={aPet._id} className="even:bg-blue-gray-50/50">
+                                <td className="p-4">
+                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                        {aPet.name}
+                                    </Typography>
+                                </td>
 
-                                    <td className="p-4">
-                                        <Typography variant="small" color="blue-gray" className="font-normal">
-                                            {aPet.user_name}
-                                        </Typography>
-                                    </td>
+                                <td className="p-4">
+                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                        {aPet.user_name}
+                                    </Typography>
+                                </td>
 
-                                    <td className="p-4">
-                                        <Typography variant="small" color="blue-gray" className="font-normal">
-                                            {aPet.email}
-                                        </Typography>
-                                    </td>
+                                <td className="p-4">
+                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                        {aPet.email}
+                                    </Typography>
+                                </td>
 
-                                    {/* delete btn */}
-                                    <td className="p-4">
-                                        <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
-                                            <button onClick={() => deleteHandeler(_id)} className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">Delete</button>
-                                        </Typography>
-                                    </td>
+                                {/* delete btn */}
+                                <td className="p-4">
+                                    <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
+                                        <button onClick={() => deleteHandeler(aPet._id)} className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">Delete</button>
+                                    </Typography>
+                                </td>
 
-                                    {/* update btn */}
-                                    <td className="p-4">
-                                        <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
+                                {/* update btn */}
+                                <td className="p-4">
+                                    <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
 
-                                            {
-                                                aPet.adopted === true ? 'adopted'
-                                                    : <button onClick={() => makeUpdateUser(aPet)} className="bg-teal-500 text-white px-3 py-2 rounded">Update
-                                                    </button>
-                                            }
+                                        <button onClick={() => makeUpdateUser(aPet)} className="bg-teal-500 text-white px-3 py-2 rounded">Update
+                                        </button>
 
-                                            {/* <button className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">Update</button> */}
-                                        </Typography>
-                                    </td>
+                                        {/* <button className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">Update</button> */}
+                                    </Typography>
+                                </td>
 
-                                    <td className="p-4">
-                                        <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
+                                <td className="p-4">
+                                    <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
                                         {
                                             <button onClick={() => handleAdoptedUser(aPet)} className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">{aPet?.adopted === true ? 'Adopted' : 'Not Adopted'}
                                             </button>
-                                            
-                                                // aPet.adopted === true ? <button className="flex items-center gap-2 bg-amber-700 px-3 py-2 rounded text-white">Adopt</button>
-                                                //     : <button onClick={() => handleAdoptedUser(aPet)} className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">Reject
-                                                //     </button>
-                                            }
-                                            {/* <button onClick={() => setAdoptedBtn(!adopted)}>Adopted</button>
+
+                                            // aPet.adopted === true ? <button className="flex items-center gap-2 bg-amber-700 px-3 py-2 rounded text-white">Adopt</button>
+                                            //     : <button onClick={() => handleAdoptedUser(aPet)} className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">Reject
+                                            //     </button>
+                                        }
+                                        {/* <button onClick={() => setAdoptedBtn(!adopted)}>Adopted</button>
                                             {() => handleAdoptedPet(setAdoptedBtn(!adopted))} */}
-                                            {/* {aPet.adopted === true ? <button className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">Reject</button> : <button className="flex items-center gap-2 bg-amber-700 px-3 py-2 rounded text-white">Adopt</button>} */}
-                                        </Typography>
-                                    </td>
-                                </tr>
+                                        {/* {aPet.adopted === true ? <button className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white">Reject</button> : <button className="flex items-center gap-2 bg-amber-700 px-3 py-2 rounded text-white">Adopt</button>} */}
+                                    </Typography>
+                                </td>
+                            </tr>
                             )}
                         </tbody>
                     </table>
                 </Card>
             </div>
+                </>
+            }
+            
         </div>
     );
 };
