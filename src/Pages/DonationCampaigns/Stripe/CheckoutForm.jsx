@@ -25,7 +25,6 @@ const CheckoutForm = ({ petDetail }) => {
     const { _id, pet_id, name, donated_amount, maximum_donation_amount } = petDetail;
     // console.log(petDetail);
 
-
     useEffect(() => {
         if (amount > 0) {
             axiosPublic.post('/create-payment-intent', { price: amount })
@@ -42,7 +41,8 @@ const CheckoutForm = ({ petDetail }) => {
     const handleSubmit = async (event) => {
 
         event.preventDefault();
-        setDonationError('')
+        // setDonationError('')
+        
         const donationAmount = event.target.donationAmount.value;
         const totalDonationAmount = parseInt(donated_amount) + parseInt(donationAmount);
         const newDonationAmount = maximum_donation_amount - donated_amount;
@@ -53,7 +53,7 @@ const CheckoutForm = ({ petDetail }) => {
             // setAmount(totalDonationAmount)
         }
         else {
-            setDonationError(`Donation Amount is Already Equal or Higher to Maximum Donation Amount. Please Donate between 1 to ${newDonationAmount}`)
+            return setDonationError(`Donation Amount is Already Equal or Higher to Maximum Donation Amount. Please Donate between 1 to ${newDonationAmount}`)
         }
 
 
@@ -64,6 +64,9 @@ const CheckoutForm = ({ petDetail }) => {
         const card = elements.getElement(CardElement);
 
         if (card === null) {
+            return;
+        }
+        if(doantionError) {
             return;
         }
 
@@ -78,9 +81,15 @@ const CheckoutForm = ({ petDetail }) => {
             setSuccess('')
         }
         else {
-            console.log('payment method', paymentMethod);
-            setSuccess('Congratualations!! You are successfully donated.')
-            setError('')
+            if (doantionError) {
+                return;
+            }
+            else {
+                console.log('payment method', paymentMethod);
+                setSuccess('Congratualations!! You are successfully donated.')
+                setError('')
+            }
+
         }
         // confirm card payment
         const { paymentIntent, error: confirmationError } = await stripe.confirmCardPayment(clientSecret, {
@@ -138,7 +147,7 @@ const CheckoutForm = ({ petDetail }) => {
                 <div className="mb-4">
                     <label>Amount</label>
                     <Input
-                    onChange={(e) => setAmount(e.target.value)}
+                        onChange={(e) => setAmount(e.target.value)}
                         type="tel"
                         name="donationAmount"
                         placeholder="Donation Amount"
