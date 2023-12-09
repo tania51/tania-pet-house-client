@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         {
           path: "petDetails/:id",
           element: <PrivateRoute><PetDetails></PetDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5008/all-pets/petDetails/${params.id}`)
+          loader: ({params}) => fetch(`https://pet-server-pi.vercel.app/all-pets/petDetails/${params.id}`)
         },
         {
           path: "donationCampaigns",
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         {
           path: "donationDetails/:id",
           element: <PrivateRoute><DonationDetails></DonationDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5008/all-pets/petDetails/${params.id}`)
+          loader: ({params}) => fetch(`https://pet-server-pi.vercel.app/all-pets/petDetails/${params.id}`)
         },
         {
           path: "secret",
@@ -93,12 +93,12 @@ const router = createBrowserRouter([
         {
           path: "myDonationCampaign",
           element: <PrivateRoute><MyDonationCampaign></MyDonationCampaign></PrivateRoute>,
-          // loader: ({params}) => fetch(`http://localhost:5008/donation-campaigns/${params.email}`)
+          // loader: ({params}) => fetch(`https://pet-server-pi.vercel.app/donation-campaigns/${params.email}`)
         },
         {
           path: "myDonationCampaign/edit/:id",
           element: <EditMyDonationCampaign></EditMyDonationCampaign>,
-          loader: ({params}) => fetch(`http://localhost:5008/my-donation-campaigns/${params.id}`)
+          loader: ({params}) => fetch(`https://pet-server-pi.vercel.app/my-donation-campaigns/${params.id}`)
         },
         {
           path: "myDonations",
@@ -108,12 +108,12 @@ const router = createBrowserRouter([
         {
           path: "users",
           element: <PrivateRoute><Users></Users></PrivateRoute>,
-          loader: () => fetch(`http://localhost:5008/users`)
+          loader: () => fetch(`https://pet-server-pi.vercel.app/users`)
         },
         {
           path: "admin/allPets",
           element: <PrivateRoute><AllPets></AllPets></PrivateRoute>,
-          loader: () => fetch(`http://localhost:5008/all-pets`)
+          loader: () => fetch(`https://pet-server-pi.vercel.app/all-pets`)
         },
         {
           path: "admin/allDonation",
