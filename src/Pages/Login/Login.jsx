@@ -22,7 +22,9 @@ const Login = () => {
         .then(res => {
             reset();
             console.log(res.user);
-            navigate(fromPage, { replace: true });
+            if(res.user) {
+                navigate(fromPage, { replace: true });
+            }
         })
         .catch(err => {
             Swal.fire({
@@ -39,6 +41,7 @@ const Login = () => {
         googleSignIn()
         .then(res => {
             console.log(res.user);
+            navigate(fromPage, { replace: true });
            
         })
     }

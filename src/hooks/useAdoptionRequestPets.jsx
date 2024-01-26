@@ -9,7 +9,7 @@ const useAdoptionRequestPets = () => {
     const {refetch, data: adoptedRequestPets=[]} = useQuery({
         queryKey: ['adopted-pets'],
         queryFn: async () => {
-            const res = await axiosPublic.get(`https://pet-server-pi.vercel.app/adoptedPet/${user?.email}`)
+            const res = await axiosPublic.get(`http://localhost:5008/adoptedPet/${user?.email}`)
             // console.log(res.data);
             return res.data
         }

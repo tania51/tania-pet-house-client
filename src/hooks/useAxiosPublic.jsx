@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 const axiosPublic = axios.create({
-    baseURL: 'https://pet-server-pi.vercel.app/'
+    baseURL: 'http://localhost:5008/'
 })
 
 const useAxiosPublic = () => {

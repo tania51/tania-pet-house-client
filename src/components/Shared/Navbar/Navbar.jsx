@@ -54,7 +54,6 @@ function StickyNavbar() {
         <NavLink className="mr-3" to="/">Home</NavLink>
         <NavLink className="mr-3" to="/petListing">Pet Listing</NavLink>
         <NavLink className="mr-3" to="/donationCampaigns">Donation Campaigns</NavLink>
-        <NavLink className="mr-3" to="/secret">Secret</NavLink>
         {/* <button onClick={() => setMood(!mood)} className="text-xl ml-3">
           {
             mood ? <MdNightlight />

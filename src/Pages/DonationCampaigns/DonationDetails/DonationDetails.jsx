@@ -56,7 +56,7 @@ const DonationDetails = () => {
                 phn_Number: number,
                 address: address
             }
-            axiosPublic.post('https://pet-server-pi.vercel.app/adoptedPet', adoptedUserInfo)
+            axiosPublic.post('http://localhost:5008/adoptedPet', adoptedUserInfo)
             .then(res => {
                 console.log(res.data);
             })

@@ -26,8 +26,8 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className="flex gap-10 h-full custom">
-                <div className="w-3/12 h-auto flex-1 bg-amber-100">
+            <div className="flex gap-10 h-screen custom">
+                <div className="w-3/12 max-h-[700vh] flex-1 bg-amber-100">
                     <div className="mb-2 flex items-center justify-between p-4">
                         <Typography variant="h5" color="blue-gray">
 
@@ -146,15 +146,9 @@ const Sidebar = () => {
 
                                 {/* only admin navlinks */}
                                 {/* My Donations */}
-                                <ListItemPrefix>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                            className="h-5 w-5"
-                                        ></svg>
-                                            <p>------ Admin ------</p>
-                                        </ListItemPrefix>
+                                <ListItem className="admin-bg">
+                                    <p className="text-center">------ Admin ------</p>
+                                </ListItem>
                                 <ListItem>
                                     <ListItemPrefix>
                                     <HiMiniUsers className="text-xl" />

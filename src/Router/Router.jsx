@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
-import Secret from "../Pages/Optional/Secret";
 import LayOut from "../LayOut/LayOut";
 import PrivateRoute from "./PrivateRoute";
 import Home from "../Pages/Home/Home/Home";
@@ -40,7 +39,7 @@ const router = createBrowserRouter([
         {
           path: "petDetails/:id",
           element: <PrivateRoute><PetDetails></PetDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`https://pet-server-pi.vercel.app/all-pets/petDetails/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5008/all-pets/petDetails/${params.id}`)
         },
         {
           path: "donationCampaigns",
@@ -49,11 +48,7 @@ const router = createBrowserRouter([
         {
           path: "donationDetails/:id",
           element: <PrivateRoute><DonationDetails></DonationDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`https://pet-server-pi.vercel.app/all-pets/petDetails/${params.id}`)
-        },
-        {
-          path: "secret",
-          element: <PrivateRoute><Secret></Secret></PrivateRoute>
+          loader: ({params}) => fetch(`http://localhost:5008/all-pets/petDetails/${params.id}`)
         }
       ]
     },
@@ -93,12 +88,12 @@ const router = createBrowserRouter([
         {
           path: "myDonationCampaign",
           element: <PrivateRoute><MyDonationCampaign></MyDonationCampaign></PrivateRoute>,
-          // loader: ({params}) => fetch(`https://pet-server-pi.vercel.app/donation-campaigns/${params.email}`)
+          // loader: ({params}) => fetch(`http://localhost:5008/donation-campaigns/${params.email}`)
         },
         {
           path: "myDonationCampaign/edit/:id",
           element: <EditMyDonationCampaign></EditMyDonationCampaign>,
-          loader: ({params}) => fetch(`https://pet-server-pi.vercel.app/my-donation-campaigns/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5008/my-donation-campaigns/${params.id}`)
         },
         {
           path: "myDonations",
@@ -108,12 +103,12 @@ const router = createBrowserRouter([
         {
           path: "users",
           element: <PrivateRoute><Users></Users></PrivateRoute>,
-          loader: () => fetch(`https://pet-server-pi.vercel.app/users`)
+          loader: () => fetch(`http://localhost:5008/users`)
         },
         {
           path: "admin/allPets",
           element: <PrivateRoute><AllPets></AllPets></PrivateRoute>,
-          loader: () => fetch(`https://pet-server-pi.vercel.app/all-pets`)
+          loader: () => fetch(`http://localhost:5008/all-pets`)
         },
         {
           path: "admin/allDonation",

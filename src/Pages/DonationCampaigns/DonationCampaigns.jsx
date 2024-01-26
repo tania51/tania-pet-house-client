@@ -13,7 +13,6 @@ const DonationCampaigns = () => {
             <div
                 id="scrollableDiv"
                 style={{
-                    height: 300,
                     overflow: 'auto',
                     display: 'flex',
                     flexDirection: 'column',
