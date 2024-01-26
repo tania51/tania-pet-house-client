@@ -7,7 +7,7 @@ const DashBoard = () => {
     return (
         <div>
             <StickyNavbar></StickyNavbar>
-            <div className="bg-teal-50 max-h-[100vh]">
+            <div className="bg-teal-50">
                 <Sidebar></Sidebar>
             </div>
         </div>
