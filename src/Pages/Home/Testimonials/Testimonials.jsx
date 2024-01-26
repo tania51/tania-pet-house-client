@@ -7,6 +7,7 @@ import {
 } from "@material-tailwind/react";
 import Container from "../../../components/Shared/Container/Container";
 import Title from "../../../components/Shared/Title/Title";
+import "./Testimonials.css"
 
 function StarIcon() {
     return (
@@ -35,7 +36,7 @@ const Testimonials = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32 mt-8">
 
                 {/* testimonial card 1 */}
-                <Card color="transparent" shadow={false} className="w-full border-amber-700 border-b-[3px] bg-amber-50 p-8">
+                <Card color="transparent" shadow={false} className="w-full border-amber-700 hover:border-b-[3px] bg-amber-50 p-8 card-testimonial">
 
                     <CardBody className="mb-6 p-0 pt-6">
                         <Typography>
@@ -56,7 +57,7 @@ const Testimonials = () => {
                         />
                         <div className="flex w-full flex-col gap-0.5">
                             <div className="flex items-center justify-between">
-                                <Typography variant="h5" color="blue-gray">
+                                <Typography variant="h5" color="blue-gray" className="text-ambr">
                                 -Peter Wells
                                 </Typography>
                             </div>
@@ -66,7 +67,7 @@ const Testimonials = () => {
                 </Card>
 
                 {/* testimonial card 2 */}
-                <Card color="transparent" shadow={false} className="w-full border-teal-700 border-b-[3px] bg-teal-50 p-8">
+                <Card color="transparent" shadow={false} className="w-full border-teal-700 hover:border-b-[3px] bg-teal-50 p-8 card-testimonial2">
 
                     <CardBody className="mb-6 p-0 pt-6">
                         <Typography>
@@ -87,7 +88,7 @@ const Testimonials = () => {
                         />
                         <div className="flex w-full flex-col gap-0.5">
                             <div className="flex items-center justify-between">
-                                <Typography variant="h5" color="blue-gray">
+                                <Typography variant="h5" color="blue-gray" className="text-ambr2">
                                 -Bunny Goodwin
                                 </Typography>
                             </div>
@@ -97,7 +98,7 @@ const Testimonials = () => {
                 </Card>
 
                 {/* testimonial card 3 */}
-                <Card color="transparent" shadow={false} className="w-full border-teal-700 border-b-[3px] bg-teal-50 p-8">
+                <Card color="transparent" shadow={false} className="w-full border-teal-700 hover:border-b-[3px] bg-teal-50 p-8 card-testimonial2">
 
                     <CardBody className="mb-6 p-0 pt-6">
                         <Typography>
@@ -118,7 +119,7 @@ const Testimonials = () => {
                         />
                         <div className="flex w-full flex-col gap-0.5">
                             <div className="flex items-center justify-between">
-                                <Typography variant="h5" color="blue-gray">
+                                <Typography variant="h5" color="blue-gray" className="text-ambr2">
                                 -Cyndi and Louella Voegeli
                                 </Typography>
                             </div>
@@ -128,7 +129,7 @@ const Testimonials = () => {
                 </Card>
 
                 {/* testimonial card 4 */}
-                <Card color="transparent" shadow={false} className="w-full border-amber-700 border-b-[3px] bg-amber-50 p-8">
+                <Card color="transparent" shadow={false} className="w-full border-amber-700 hover:border-b-[3px] bg-amber-50 p-8 card-testimonial">
 
                     <CardBody className="mb-6 p-0 pt-6">
                         <Typography>
@@ -149,7 +150,7 @@ const Testimonials = () => {
                         />
                         <div className="flex w-full flex-col gap-0.5">
                             <div className="flex items-center justify-between">
-                                <Typography variant="h5" color="blue-gray">
+                                <Typography variant="h5" color="blue-gray" className="text-ambr">
                                 -The Cheryl and Ben Rubinstei
                                 </Typography>
                             </div>

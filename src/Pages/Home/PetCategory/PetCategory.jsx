@@ -19,7 +19,8 @@ const PetCategory = () => {
                 {/* cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {/* card 1 */}
-                    <Card className="mt-6 border rounded-sm hover:border-amber-700">
+                    <Card className="mt-6 border rounded-sm hover:border-amber-700" data-aos="fade-right" data-aos-easing="linear"
+                        data-aos-duration="500">
                         <CardBody>
                             <Typography variant="h5" color="blue-gray" className="mb-2">
                                 Cats
@@ -34,7 +35,8 @@ const PetCategory = () => {
                     </Card>
                     {/* card 2 */}
 
-                    <Card className="mt-6 border rounded-sm hover:border-teal-700">
+                    <Card className="mt-6 border rounded-sm hover:border-teal-700" data-aos="fade-right" data-aos-easing="linear"
+                        data-aos-duration="1000">
                         <CardBody>
                             <Typography variant="h5" color="blue-gray" className="mb-2">
                                 Dogs
@@ -49,7 +51,8 @@ const PetCategory = () => {
                     </Card>
 
                     {/* card 3 */}
-                    <Card className="mt-6 border rounded-sm hover:border-amber-700">
+                    <Card className="mt-6 border rounded-sm hover:border-amber-700" data-aos="fade-left" data-aos-easing="linear"
+                        data-aos-duration="1000">
                         <CardBody>
                             <Typography variant="h5" color="blue-gray" className="mb-2">
                                 Rabbit
@@ -65,13 +68,14 @@ const PetCategory = () => {
 
                     {/* card 4 */}
 
-                    <Card className="mt-6 border rounded-sm hover:border-teal-700">
+                    <Card className="mt-6 border rounded-sm hover:border-teal-700" data-aos="fade-left" data-aos-easing="linear"
+                        data-aos-duration="500">
                         <CardBody>
                             <Typography variant="h5" color="blue-gray" className="mb-2">
                                 Fish
                             </Typography>
                             <Typography>
-                            Fish are great pets because they do not need training, playtime, or grooming.
+                                Fish are great pets because they do not need training, playtime, or grooming.
                             </Typography>
                         </CardBody>
                         <CardFooter className="pt-0">
