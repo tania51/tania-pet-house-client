@@ -9,20 +9,21 @@ import {
 } from "@material-tailwind/react";
 import { FaRegUser } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import CustomBtn2 from "../../../components/Shared/Button/CustomBtn2";
+import "./LatestNews.css"
 
 
 const LatestNews = () => {
     return (
-        <div className="pb-16 lg:pb-32">
+        <div className="">
             <Container>
                 <div className="pb-7">
                     <Title heading="Our News" subHeading="Latest News Update"></Title>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
                     {/* card 1 */}
                     <Card className="space-y-2" shadow={false}>
-                        <CardHeader shadow={false} floated={false} className="h-72">
+                        <CardHeader shadow={false} floated={false} className="h-72 parent-img">
                             <img
                                 src="https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Sleeping Cat"
@@ -48,7 +49,7 @@ const LatestNews = () => {
                             {/* heading */}
                             <div>
                                 <Typography
-                                    className="text-2xl text-teal-900 font-extrabold py-1 pb-3"
+                                    className="text-2xl text-teal-900 hover:text-amber-800 cursor-pointer font-extrabold py-1 pb-3"
                                 >
                                     Working For Cat Adoption
                                 </Typography>
@@ -62,13 +63,13 @@ const LatestNews = () => {
                             </Typography>
                         </CardBody>
                         <CardFooter className="pt-0">
-                            <CustomBtn2 btnContent="Read More"></CustomBtn2>
+                        <button className="text-teal-900 hover:text-amber-800 font-extrabold"><a href="#">Read More</a></button>
                         </CardFooter>
                     </Card>
 
                     {/* card 2 */}
                     <Card className="space-y-2" shadow={false}>
-                        <CardHeader shadow={false} floated={false} className="h-72">
+                        <CardHeader shadow={false} floated={false} className="h-72 parent-img">
                             <img
                                 src="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Dog"
@@ -94,7 +95,7 @@ const LatestNews = () => {
                             {/* heading */}
                             <div>
                                 <Typography
-                                    className="text-2xl text-teal-900 font-extrabold py-1 pb-3"
+                                    className="text-2xl text-teal-900 hover:text-amber-800 cursor-pointer font-extrabold py-1 pb-3"
                                 >
                                     Working For Dog Adoption
                                 </Typography>
@@ -108,13 +109,13 @@ const LatestNews = () => {
                             </Typography>
                         </CardBody>
                         <CardFooter className="pt-0">
-                            <CustomBtn2 btnContent="Read More"></CustomBtn2>
+                            <button className="text-teal-900 hover:text-amber-800 font-extrabold"><a href="#">Read More</a></button>
                         </CardFooter>
                     </Card>
 
                     {/* card 3 */}
                     <Card className="space-y-2" shadow={false}>
-                        <CardHeader shadow={false} floated={false} className="h-72">
+                        <CardHeader shadow={false} floated={false} className="h-72 parent-img">
                             <img
                                 src="https://images.pexels.com/photos/372166/pexels-photo-372166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                 alt="Rabbit"
@@ -140,7 +141,7 @@ const LatestNews = () => {
                             {/* heading */}
                             <div>
                                 <Typography
-                                    className="text-2xl text-teal-900 font-extrabold py-1 pb-3"
+                                    className="text-2xl text-teal-900 hover:text-amber-800 cursor-pointer font-extrabold py-1 pb-3"
                                 >
                                     Working For Rabbit Adoption
                                 </Typography>
@@ -154,7 +155,7 @@ const LatestNews = () => {
                             </Typography>
                         </CardBody>
                         <CardFooter className="pt-0">
-                            <CustomBtn2 btnContent="Read More"></CustomBtn2>
+                            <button className="text-teal-900 hover:text-amber-800 font-extrabold"><a href="#">Read More</a></button>
                         </CardFooter>
                     </Card>
                 </div>

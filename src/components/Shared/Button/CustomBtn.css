@@ -1,0 +1,12 @@
+.btn-hover {
+    transition: 0.5s;
+}
+.btn-hover:hover {
+    box-shadow: 8px 10px 0 #00695c;
+}
+.btn-hover2 {
+    transition: 0.5s;
+}
+.btn-hover2:hover {
+    box-shadow: 8px 10px 0 #ff8f00;
+}

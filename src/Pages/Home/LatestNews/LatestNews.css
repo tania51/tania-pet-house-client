@@ -1,0 +1,6 @@
+.parent-img img {
+    transition: all 1.1s;
+}
+.parent-img:hover img {
+    transform: scale(1.2);
+}

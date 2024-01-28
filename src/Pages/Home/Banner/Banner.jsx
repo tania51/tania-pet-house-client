@@ -1,4 +1,5 @@
 import { Button } from "@material-tailwind/react";
+import "./Banner.css"
 
 
 const Banner = () => {
@@ -10,7 +11,7 @@ const Banner = () => {
                         <h2 className="text-5xl font-bold">Our <span className="bg-teal-900 px-3 py-1 rounded">Best Friends</span></h2>
                         <p>Pet, any animal kept by human beings as a source <br /> of companionship and pleasure.</p>
                         {/* <button className="bg-amber-900 px-3 py-1 rounded">Learn More..</button> */}
-                        <Button size="sm" variant="text" className="flex items-center gap-2 bg-amber-800 px-3 py-2 rounded text-white">
+                        <Button size="sm" variant="text" className="flex items-center gap-2 bg-amber-800 px-3 py-2 rounded hover:bg-teal-900 text-white btn-hover3" data-aos="zoom-in-down" data-aos-duration="3000">
                             Learn More
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

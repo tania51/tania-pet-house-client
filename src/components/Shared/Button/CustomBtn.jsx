@@ -1,10 +1,11 @@
 import { Button } from "@material-tailwind/react";
+import "./CustomBtn.css"
 
 
 const CustomBtn = ({ btnContent }) => {
     return (
-        <Button size="sm" variant="text" className="flex items-center gap-2 bg-teal-900 px-3 py-2 rounded text-white hover:text-white hover:bg-amber-800">
-            {btnContent}
+        <Button size="sm" variant="text" className="flex items-center gap-2 bg-teal-800 px-3 py-2 rounded text-white hover:text-white hover:bg-amber-800 btn-hover">
+            <span>{btnContent}</span>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
